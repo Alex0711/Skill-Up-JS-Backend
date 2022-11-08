@@ -4,7 +4,6 @@ import {useField} from "formik";
 const FormItem = ({ labelText, ...props }) => {
   // hook de formik para usar sus propiedades
   const [field, meta] = useField(props);
-  console.log(field);
   return (
     <>
       <div>
