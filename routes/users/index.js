@@ -5,6 +5,8 @@ const {
   authenticateUser,
   checkRole,
 } = require('../../middlewares/authentication.middleware');
+const upload = require('../../middlewares/mullter');
+const { toCloudinary } = require('../../middlewares/cloudinary');
 
 router.get(
   '/all',
@@ -76,17 +78,15 @@ router.delete(
   }
 );
 
-
 router.put('/', authenticateUser, async (req, res, next) => {
-
   try {
     const { schema } = req.body;
-    const updated = await ctrlUser.put(schema, req.user.sub)
-    res.status(200).send(updated)
+    const updated = await ctrlUser.put(schema, req.user.sub);
+    res.status(200).send(updated);
   } catch (error) {
-    next(error)
+    next(error);
   }
-})
+});
 router.delete('/', authenticateUser, async (req, res, next) => {
   const id = req.user.sub;
 
@@ -97,5 +97,20 @@ router.delete('/', authenticateUser, async (req, res, next) => {
     next(error);
   }
 });
+
+router.post(
+  '/upload',
+  upload.single('image'),
+  toCloudinary,
+  async (req, res, next) => {
+    try {
+      res.send('uploaded');
+    } catch (error) {
+      next(error);
+    }
+  }
+);
+
+
 
 module.exports = router;
