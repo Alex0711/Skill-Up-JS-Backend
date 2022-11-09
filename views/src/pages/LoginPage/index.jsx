@@ -1,17 +1,18 @@
-import React from "react";
-import FooterContainer from "../../Components/Footer/FooterContainer.jsx";
-import { FormLogin } from "../../Components/Forms/formLogin.jsx";
-import FormLoginRegister from "../../Components/Forms/FormLoginRegister.jsx";
-import HeaderContainer from "../../Components/Header/HeaderContainer.jsx";
+import React from 'react';
+import { FormLogin } from '../../Components/Forms/formLogin.jsx';
 
 const LoginPage = () => {
+  
   return (
     <>
-      <HeaderContainer />
-      <FormLoginRegister />
-      <FooterContainer />
+      <Container>
+        <Title>Pagina de Login</Title>
+
+        <FormLogin />
+
+      </Container>
     </>
   );
 };
 
-export default LoginPage;
+export default LoginPage
