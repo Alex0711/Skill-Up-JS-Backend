@@ -22,8 +22,8 @@ const createTransaction = {
   category: {
     exists: { bail: true, errorMessage: 'Category is required' },
     isIn: {
-      options: ['Egress', 'Income'],
-      errorMessage: 'The allowed values are Egress and Income',
+      options: ['Expense', 'Income'],
+      errorMessage: 'The allowed values are Expense and Income',
     },
   },
   accountId: {
