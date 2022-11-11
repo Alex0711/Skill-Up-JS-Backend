@@ -1,4 +1,4 @@
-import { getUsersFailed, getUsersSuccess, getUsersStart, getById, addUsers, deleteUsers, } from "./usersSlice";
+import { getUsersFailed, getUsersSuccess, getUsersStart, getById, addUsers, deleteUsers, cleanUser } from "./usersSlice";
 import { instance } from "../../instance";
 import axios from 'axios';
 
@@ -16,6 +16,15 @@ export const getUsers = () => {
     };
 };
 
+export const cleanUserState = () => {
+    return async (dispatch) => {
+        try {
+            dispatch(cleanUser())
+        } catch (error) {
+            console.log(error);
+        }
+    }
+}
 export const getUserById = (id) => {
     return async (dispatch) => {
         dispatch(getUsersStart);

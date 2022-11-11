@@ -1,10 +1,16 @@
 import { Link } from "react-router-dom";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { cleanUserState } from "../../../redux/features/users/usersGetSlice";
 import { RiTeamLine } from "react-icons/ri";
 
 const Navbar = ({ navs, handleToggle }) => {
   const user = useSelector((state) => state.users.usersList);
-
+  const dispatch = useDispatch();
+  
+  const logout = () => {
+    localStorage.removeItem("access_token");
+    dispatch(cleanUserState())
+  }
   return (
     <nav
       className={`lg:flex items-center ${
@@ -37,6 +43,7 @@ const Navbar = ({ navs, handleToggle }) => {
         {user.length !== 0 ? (
           <>
             <Link
+              onClick={logout}
               className="py-4 px-3 hover:text-teal-500 duration-200"
               to="/login"
             >

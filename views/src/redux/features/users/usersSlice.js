@@ -41,7 +41,12 @@ const usersSlice = createSlice({
     addUsers: (state, action) => {
       state.usersList.push(action.payload)
     },
-
+    cleanUser: (state) => {
+      return {
+        ...state,
+        userList: []
+      }
+    },
     deleteUsers: (state) => {
       return {
         ...state,
@@ -50,6 +55,6 @@ const usersSlice = createSlice({
   }
 })
 
-export const { getUsersFailed, getUsersStart, getUsersSuccess, getById, addUsers, deleteUsers } = usersSlice.actions;
+export const { getUsersFailed, getUsersStart, getUsersSuccess, getById, addUsers, deleteUsers, cleanUser } = usersSlice.actions;
 
 export default usersSlice.reducer;
