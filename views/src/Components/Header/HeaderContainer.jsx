@@ -22,7 +22,6 @@ const HeaderContainer = () => {
       url: "/movements",
       icon: <RiArrowUpDownLine />,
     },
-    { text: "Balance charge", url: "/charge", icon: <MdAttachMoney /> },
     { text: "Expense", url: "/expense", icon: <MdMoneyOff /> },
     { text: "Transfer", url: "/transfer", icon: <BiTransfer /> },
     { text: "About us", url: "/about", icon: <RiTeamLine /> },

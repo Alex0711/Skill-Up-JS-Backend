@@ -4,14 +4,14 @@ import { useDispatch, useSelector } from "react-redux";
 import { getTransactions } from "../../redux/features/transaction/transactionGetSlice";
 
 const AdminDashboardContainer = () => {
-  const movements = useSelector((state) => state.transactions.transactionsList);
+  const movements = useSelector((state) => state);
   const dispatch = useDispatch();
-
-  console.log(movements);
-
+  
   useEffect(() => {
     dispatch(getTransactions());
   }, [dispatch]);
+  
+  console.log(movements);
 
   return (
     <>

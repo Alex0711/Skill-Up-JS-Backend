@@ -8,7 +8,6 @@ import LoginPage from "./pages/LoginPage";
 import About from "./Components/About/About";
 import MovementPage from "./pages/MovementPage";
 import MovementsPage from "./pages/MovementsPage";
-import BalanceChargePage from "./pages/BalanceChargePage"
 import ExpensePage from "./pages/ExpensePage";
 import TransferPage from "./pages/TransferPage";
 import UserPage from "./pages/UserPage/"
@@ -24,7 +23,6 @@ function App() {
       <Route path="/about" element={<About />} />
       <Route path="/movements" element={<MovementsPage />} />
       <Route path="/movements/:id" element={<MovementPage />} />
-      <Route path="/charge" element={<BalanceChargePage />}/>
       <Route path="/expense" element={<ExpensePage />} />
       <Route path="/transfer" element={<TransferPage />} />
       <Route path="/admin/dashboard" element={<AdminPage />} />

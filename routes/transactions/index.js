@@ -3,7 +3,7 @@ const transactions = require('../../controllers/transactions');
 const router = express.Router();
 const {
   authenticateUser,
-  checkRole,
+  // checkRole,
 } = require('../../middlewares/authentication.middleware');
 
 router.get('/paginate', authenticateUser, transactions.paginate);
@@ -18,7 +18,15 @@ router.get('/:id', authenticateUser, async (req, res, next) => {
   }
 });
 
-router.get('/', authenticateUser, checkRole([1, 3]), async (req, res, next) => {
+// router.get('/', authenticateUser, checkRole([1, 3]), async (req, res, next) => {
+//   try {
+//     const transaction = await transactions.getAll();
+//     res.status(200).send(transaction);
+//   } catch (error) {
+//     next(error);
+//   }
+// });
+router.get('/', async (req, res, next) => {
   try {
     const transaction = await transactions.getAll();
     res.status(200).send(transaction);
