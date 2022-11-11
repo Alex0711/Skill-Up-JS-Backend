@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-
-const Table = ({ user }) => {
+const AdminTable = ({ movements }) => {
   return (
     <div className="overflow-auto">
       <table className="w-full">
@@ -25,7 +23,7 @@ const Table = ({ user }) => {
           </tr>
         </thead>
         <tbody>
-          {user?.account?.transaction
+          {movements
             .map(
               ({
                 id,
@@ -84,4 +82,4 @@ const Table = ({ user }) => {
   );
 };
 
-export default Table;
+export default AdminTable;

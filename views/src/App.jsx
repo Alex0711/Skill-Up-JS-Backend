@@ -12,6 +12,7 @@ import BalanceChargePage from "./pages/BalanceChargePage"
 import ExpensePage from "./pages/ExpensePage";
 import TransferPage from "./pages/TransferPage";
 import UserPage from "./pages/UserPage/"
+import AdminPage from "./pages/AdminPage";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
       <Route path="/charge" element={<BalanceChargePage />}/>
       <Route path="/expense" element={<ExpensePage />} />
       <Route path="/transfer" element={<TransferPage />} />
+      <Route path="/admin/dashboard" element={<AdminPage />} />
       <Route path="*" element={<LandingPage fireSwal={true} />} /> {/* if no route matchs, redirects to landing */}
     </Routes>
   );
