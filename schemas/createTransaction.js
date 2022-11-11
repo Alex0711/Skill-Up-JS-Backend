@@ -26,20 +26,6 @@ const createTransaction = {
       errorMessage: 'The allowed values are Expense and Income',
     },
   },
-  accountId: {
-    exists: { bail: true, errorMessage: 'Account id is required' },
-    trim: true,
-    isUUID: {
-      errorMessage: 'Account id invalid',
-    },
-  },
-  toAccountId: {
-    exists: { bail: true, errorMessage: 'toAccountId is required' },
-    trim: true,
-    isUUID: {
-      errorMessage: 'Account id invalid',
-    },
-  },
 };
 
 module.exports = createTransaction;
