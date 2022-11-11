@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getUsers,updateUser, } from "../../redux/features/users/usersGetSlice";
 import Button from "../Buttons/Button";
 import Swal from "sweetalert2";
-
+import UserPerfil from "./UserPerfil";
 const UserProfile = () => {
 
   const user = useSelector(state => state.users.usersList);
@@ -67,7 +67,9 @@ const UserProfile = () => {
   };  
   return (
     <div className="h-[80vh] flex justify-center ">
-     <form className="h-full w-[80vw]  flex flex-col  items-center border-2" onChange={(e)=> handleChange(e)}>
+
+      <UserPerfil />
+  {/*    <form className="h-full w-[80vw]  flex flex-col  items-center border-2" onChange={(e)=> handleChange(e)}>
         <div className="pt-8 w-9/12 flex flex-row items-center justify-between">
           <div className="sm:ml-20"></div>
                   <h1 className="text-2xl "> Your profile</h1>
@@ -153,7 +155,7 @@ const UserProfile = () => {
             if (isEdited) return fireSwal("success", "Great! Your changes as been saved.")
             if(!isEdited) fireSwal("warning", "Nothing to change over here...", false,false, 3000) 
             }} /> 
-      </form> 
+      </form>  */}
     </div>
   );
 };

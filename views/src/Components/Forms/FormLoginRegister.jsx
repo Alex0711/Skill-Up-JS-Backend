@@ -22,7 +22,7 @@ const FormLoginRegister = () => {
     if (isLogin) {
       auth
         .signIn(values.email, values.password)
-        .then(console.log("logueado"))
+        //.then(console.log("logueado"))
         .catch((error) => {
           console.log(error);
         });
