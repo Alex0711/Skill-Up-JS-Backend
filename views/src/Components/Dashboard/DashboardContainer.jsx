@@ -1,20 +1,16 @@
 import Dashboard from "./Dashboard.jsx";
-import { useEffect } from "react";
-import { getUsers } from "../../redux/features/users/usersGetSlice";
-import { useDispatch, useSelector } from "react-redux";
+import { Fragment } from "react";
+import { useSelector } from "react-redux";
+
 
 const DashboardContainer = () => {
-  const user = useSelector((state) => state.users.usersList);
-  const dispatch = useDispatch();
-
-  useEffect(() => {
-    dispatch(getUsers());
-  }, []);
+  const user = useSelector(state => state.users.usersList);
+  const loading = useSelector(state => state.users.loading);
 
   return (
-    <>
-      <Dashboard user={user}/>
-    </>
+    <Fragment>
+      {user && !loading && <Dashboard user={user}/>}
+    </Fragment>
   );
 };
 
