@@ -5,6 +5,7 @@ import { endPoints } from "../services/api";
 import { useDispatch } from "react-redux";
 
 function useAuth() {
+
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -30,7 +31,6 @@ function useAuth() {
       }
       throw error;
     }
-  
   };
 
   const logout = () => {
