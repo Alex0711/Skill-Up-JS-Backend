@@ -16,8 +16,6 @@ const Table = ({ user }) => {
             <th className="p-3 font-semibold tracking-wide text-left">
               Concept
             </th>
-            <th className="p-3 font-semibold tracking-wide text-left">From</th>
-            <th className="p-3 font-semibold tracking-wide text-left">To</th>
             <th className="p-3 font-semibold tracking-wide text-left">Date</th>
             <th className="p-3 font-semibold tracking-wide text-left">
               Actions
@@ -55,12 +53,6 @@ const Table = ({ user }) => {
                     </td>
                     <td className="px-3 py-4 text-sm whitespace-nowrap">
                       {concept}
-                    </td>
-                    <td className="px-3 py-4 text-sm whitespace-nowrap">
-                      {userFrom}
-                    </td>
-                    <td className="px-3 py-4 text-sm whitespace-nowrap">
-                      {userTo}
                     </td>
                     <td className="px-3 py-4 text-sm whitespace-nowrap">
                       {createdAt.slice(0, 10)}

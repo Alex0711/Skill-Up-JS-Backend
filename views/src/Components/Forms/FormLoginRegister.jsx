@@ -7,7 +7,7 @@ import { createUser } from "../../redux/features/users/usersGetSlice";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { inputValues } from "./components/inputValues";
-import image from '../../assets/wallet.png';
+import image from "../../assets/wallet.png";
 const FormLoginRegister = () => {
   const [isLogin, setIsLogin] = useState(true);
   const auth = useAuth();
@@ -35,11 +35,11 @@ const FormLoginRegister = () => {
   };
 
   return (
-    <section className="h-full gradient-form bg-gray-200 md:h-screen">
+    <section className="flex items-center justify-center bg-gray-100 gradient-form lg:py-16">
       <div className="container py-12 px-6 h-full">
         <div className="flex justify-center items-center flex-wrap h-full g-6 text-gray-800">
           <div className="xl:w-10/12">
-            <div className="block bg-white shadow-lg rounded-lg">
+            <div className="block border bg-white shadow-lg rounded-lg px-6 py-16">
               <div className="lg:flex lg:flex-wrap g-0">
                 <div className="lg:w-6/12 px-4 md:px-0">
                   <div className="md:p-12 md:mx-6">
@@ -64,9 +64,8 @@ const FormLoginRegister = () => {
                             isLogin &&
                             (input.name === "firstName" ||
                               input.name === "lastName") ? null : (
-                              <div className="mb-4">
+                              <div className="mb-4" key={idx}>
                                 <FormItem
-                                  key={idx}
                                   classLabel="block mt-3"
                                   classInput="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                                   type={input.type}
@@ -85,19 +84,19 @@ const FormLoginRegister = () => {
                               {isLogin ? "Login" : "Register"}
                             </button>
                           </div>
-                          <div className="flex items-center justify-between pb-6">
+                          <div className="flex flex-col lg:flex-row gap-4 items-center justify-center pb-6">
                             <p>
                               {isLogin
                                 ? "Don't have an account? "
                                 : "Already have an account "}
-                              <button
-                                type="button"
-                                onClick={toggleLogin}
-                                className="inline-block px-6 py-2 border-2 border-teal-600 text-teal-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
-                              >
-                                {isLogin ? " Register" : " Login"}
-                              </button>
                             </p>
+                            <button
+                              type="button"
+                              onClick={toggleLogin}
+                              className="inline-block px-6 py-2 border-2 border-teal-600 text-teal-600 font-medium text-xs leading-tight uppercase rounded hover:bg-black hover:bg-opacity-5 focus:outline-none focus:ring-0 transition duration-150 ease-in-out"
+                            >
+                              {isLogin ? " Register" : " Login"}
+                            </button>
                           </div>
                         </Form>
                       )}
@@ -107,11 +106,7 @@ const FormLoginRegister = () => {
                 <div className="lg:w-6/12 flex items-center lg:rounded-r-lg rounded-b-lg lg:rounded-bl-none">
                   <div className=" px-4 py-6 md:p-12 md:mx-6">
                     <div className="text-center">
-                      <img
-                        className="mx-auto w-48"
-                        src={image}
-                        alt="logo"
-                      />
+                      <img className="mx-auto w-48" src={image} alt="logo" />
                       <h4 className="text-2xl font-semibold mt-1 mb-12 pb-1">
                         Alkemy Wallet
                       </h4>
