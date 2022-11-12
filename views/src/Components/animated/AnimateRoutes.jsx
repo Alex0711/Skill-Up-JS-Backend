@@ -6,7 +6,7 @@ import DashboardPage from "../../pages/DashboardPage";
 import LoginPage from "../../pages/LoginPage";
 import MovementPage from "../../pages/MovementPage";
 import MovementsPage from "../../pages/MovementsPage";
-import BalanceChargePage from "../../pages/BalanceChargePage"
+import AdminPage from '../../pages/AdminPage';
 import ExpensePage from "../../pages/ExpensePage";
 import TransferPage from "../../pages/TransferPage";
 import About from '../About/About';
@@ -19,6 +19,7 @@ const AnimateRoutes = () => {
     <Routes location={location} key={location.pathname}>
       <Route path="/" index element={<LandingPage />} />
       <Route path="/dashboard" element={<DashboardPage />} />
+      <Route path="/admin/dashboard" element={<AdminPage />} />
       <Route path="/user" element={<UserPage />} />
       <Route path="/login" element={<LoginPage />} />
       <Route path="/about" element={<About />} />
