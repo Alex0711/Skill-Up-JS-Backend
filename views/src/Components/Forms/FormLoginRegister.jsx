@@ -23,7 +23,7 @@ const FormLoginRegister = () => {
     if (isLogin) {
       auth
         .signIn(values.email, values.password)
-        .then(navigate("/dashboard"))
+        .then((data)=> console.log(data))
         .catch((error) => {
           console.log(error);
         });

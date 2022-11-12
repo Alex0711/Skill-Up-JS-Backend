@@ -1,8 +1,13 @@
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import { getUsers } from "../redux/features/users/usersGetSlice";
 import { endPoints } from "../services/api";
+import { useDispatch } from "react-redux";
 
 function useAuth() {
-  
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const signIn = async (email, password) => {
     const options = {
       Headers: {
@@ -10,13 +15,14 @@ function useAuth() {
         "Content-Type": "application/json",
       },
     };
-    console.log({email, password})
-    console.log(endPoints.auth)
     try {
       const { data } = await axios.post(endPoints.auth.login, { email, password }, options);
-      console.log({ data });
       if (data) {
-        localStorage.setItem("access_token", data.token)
+        let token = localStorage.getItem("access_token");
+        if(token) localStorage.removeItem("access_token");
+        localStorage.setItem("access_token", data.token);
+        dispatch(getUsers(data.token));
+        navigate("/dashboard");
       }
     } catch (error) {
       if (error.code === "ERR_BAD_REQUEST") {

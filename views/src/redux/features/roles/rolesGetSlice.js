@@ -5,7 +5,7 @@ import { addRoles } from "./rolesSlice";
 export const createRoles = (value) => {
  return async(dispatch) => {
   try {
-    const res = await instance.post('/roles/create', value)
+    const res = await instance().post('/roles/create', value)
     dispatch(addRoles(res.data));
     dispatch(getUsers);
   } catch (err) {
