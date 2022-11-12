@@ -4,12 +4,6 @@ import { BiTransfer } from "react-icons/bi";
 
 const TransferCard = () => {
   const links = [
-    {
-      text: "Balance charge",
-      url: "/charge",
-      info: "Charge balance to your wallet.",
-      icon: <MdAttachMoney />,
-    },
     { text: "Expense", url: "/expense", info: "Make a payment.", icon: <MdMoneyOff /> },
     {
       text: "Transfer",

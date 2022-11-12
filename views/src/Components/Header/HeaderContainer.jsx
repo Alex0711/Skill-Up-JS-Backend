@@ -1,7 +1,11 @@
 import { useState } from "react";
-import { MdOutlineSpaceDashboard, MdAttachMoney, MdMoneyOff } from "react-icons/md";
+import {
+  MdOutlineSpaceDashboard,
+  MdAttachMoney,
+  MdMoneyOff,
+} from "react-icons/md";
 import { BiTransfer } from "react-icons/bi";
-import { RiArrowUpDownLine } from "react-icons/ri";
+import { RiArrowUpDownLine, RiTeamLine } from "react-icons/ri";
 import Header from "./Header.jsx";
 
 const HeaderContainer = () => {
@@ -18,9 +22,9 @@ const HeaderContainer = () => {
       url: "/movements",
       icon: <RiArrowUpDownLine />,
     },
-    { text: "Balance charge", url: "/charge", icon: <MdAttachMoney /> },
     { text: "Expense", url: "/expense", icon: <MdMoneyOff /> },
     { text: "Transfer", url: "/transfer", icon: <BiTransfer /> },
+    { text: "About us", url: "/about", icon: <RiTeamLine /> },
   ];
 
   return (

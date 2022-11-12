@@ -1,9 +1,9 @@
 import HeaderContainer from "../../Components/Header/HeaderContainer";
 import FooterContainer from "../../Components/Footer/FooterContainer";
-import UserPerfil from "../../Components/User/UserPerfil";
-import { motion } from "framer-motion";
+import AboutContainer from "../../Components/About/AboutContainer";
+import { motion } from "framer-motion"
 
-const UserPage = () => {
+const AboutPage = () => {
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -11,13 +11,13 @@ const UserPage = () => {
       exit={{ opacity: 0 }}
     >
       <HeaderContainer />
-      <main className="flex flex-col px-6 lg:px-16 py-8 gap-6 bg-gray-50">
-        <h1 className="text-4xl font-bold">Your profile</h1>
-        <UserPerfil />
+      <main className="flex flex-col px-6 lg:px-16 py-8 gap-6 ">
+        <h1 className="text-4xl font-bold">Who we are?</h1>
+        <AboutContainer />
       </main>
       <FooterContainer />
     </motion.div>
   );
 };
 
-export default UserPage;
+export default AboutPage;

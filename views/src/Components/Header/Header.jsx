@@ -2,14 +2,14 @@ import Navbar from "./components/Navbar.jsx";
 import Logo from "./components/Logo.jsx";
 import Toggle from "./components/Toggle.jsx";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useMemo } from "react";
 import { getUsers } from "../../redux/features/users/usersGetSlice.js";
 
 const Header = ({ navs, handleToggle, setHandleToggle }) => {
   const user = useSelector((state) => state.users.userList)
   const dispatch = useDispatch();
 
-  useEffect(() => {
+  useMemo(() => {
     dispatch(getUsers());
   }, [user]);
 
