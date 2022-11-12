@@ -23,7 +23,6 @@ const UserPerfil = () => {
       "image/png",
     ].map((img) => img === file.type);
     if (supported.includes(true)) {
-      console.log("supported");
       let formData = new FormData();
       formData.append("file", file);
       formData.append("upload_preset", "zcgk2l4m");
@@ -38,6 +37,7 @@ const UserPerfil = () => {
   useEffect(() => {
     dispatch(getUsers());
   }, []);
+
   return (
     <section className="flex flex-col w-full lg:w-fit p-6 lg:px-16 lg:py-24 border rounded-lg bg-white">
       {user && (
