@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
-
-const Table = ({ user }) => {
+const AdminTable = ({ movements }) => {
   return (
     <div className="overflow-auto">
       <table className="w-full">
@@ -16,6 +14,8 @@ const Table = ({ user }) => {
             <th className="p-3 font-semibold tracking-wide text-left">
               Concept
             </th>
+            <th className="p-3 font-semibold tracking-wide text-left">From</th>
+            <th className="p-3 font-semibold tracking-wide text-left">To</th>
             <th className="p-3 font-semibold tracking-wide text-left">Date</th>
             <th className="p-3 font-semibold tracking-wide text-left">
               Actions
@@ -23,7 +23,7 @@ const Table = ({ user }) => {
           </tr>
         </thead>
         <tbody>
-          {user?.account?.transaction
+          {movements
             .map(
               ({
                 id,
@@ -55,6 +55,12 @@ const Table = ({ user }) => {
                       {concept}
                     </td>
                     <td className="px-3 py-4 text-sm whitespace-nowrap">
+                      {userFrom}
+                    </td>
+                    <td className="px-3 py-4 text-sm whitespace-nowrap">
+                      {userTo}
+                    </td>
+                    <td className="px-3 py-4 text-sm whitespace-nowrap">
                       {createdAt.slice(0, 10)}
                     </td>
                     <td className="px-3 py-4 flex gap-4 items-center whitespace-nowrap">
@@ -76,4 +82,4 @@ const Table = ({ user }) => {
   );
 };
 
-export default Table;
+export default AdminTable;

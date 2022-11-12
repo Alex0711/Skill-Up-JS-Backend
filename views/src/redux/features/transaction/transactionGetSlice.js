@@ -2,11 +2,12 @@ import { getTransactionsFailed, getTransactionsStart, getTransactionsSuccess, tr
 import { instance } from '../../instance';
 
 
+
 export const getTransactions = () => {
     return async(dispatch) => {
         dispatch(getTransactionsStart());
         try {
-            const res = await instance.get('/transaction');
+            const res = await instance().get('/transaction');
             dispatch(getTransactionsSuccess(res.data));
         } catch (err) {
             dispatch(getTransactionsFailed(err))
@@ -20,7 +21,7 @@ export const getTransactionsById = (id) => {
     return async(dispatch) => {
         dispatch(getTransactionsStart());
     try {
-        const res = await instance.get(`/transaction/${id}`);
+        const res = await instance().get(`/transaction/${id}`);
         dispatch(transactionId(res.data));
     } catch (err) {
         dispatch(getTransactionsFailed(err))
@@ -28,14 +29,18 @@ export const getTransactionsById = (id) => {
     };
 };
 
+//Deprecated dispatch beacouse it throw an error that I can not catch
 export const createTransactions = (value) => {
-    return async(dispatch) => {
-        dispatch(getTransactionsStart());
+          //async(dispatch)
+    return async() => {
+        // dispatch(getTransactionsStart());
         try {
-             await instance.post('/transaction', value);
+            await instance().post('/transaction', value);
             dispatch(getTransactions());
         } catch (err) {
-            dispatch(getTransactionsFailed(err))
+            if (err.name === 'AxiosError') {
+              return err.response
+            }
         };
     };
 };
@@ -44,7 +49,7 @@ export const getUpdateTransactions = (id) => {
     return async(dispatch) => {
         dispatch(getTransactionsStart());
         try {
-            const res = await instance.put(`/transaction/${id}`)
+            const res = await instance().put(`/transaction/${id}`)
             dispatch(addTransaction(res.data));
             dispatch(getTransactions());
         } catch (err) {

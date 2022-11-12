@@ -49,7 +49,7 @@ module.exports = {
         last_name: faker.name.lastName(),
         email: faker.internet.email(),
         password: usersPassword,
-        image: "https://res.cloudinary.com/leo-echenique/image/upload/v1668038867/wkvuim8xw0x9oez57ut5.svg",
+        image: "https://res.cloudinary.com/leo-echenique/image/upload/v1668279011/1667812544dinosaur-beast_ug4zwx.svg",
         role_id: 2,
         created_at,
         updated_at: created_at
@@ -82,7 +82,7 @@ module.exports = {
           id: faker.datatype.uuid(),
           amount: faker.finance.amount(),
           concept: faker.lorem.word(),
-          category: faker.helpers.arrayElement(["Income", "Expense"]),
+          category: faker.helpers.arrayElement(["Income", "Expense", "User-transfer"]),
           account_id: account.id,
           to_account_id: accounts[Math.floor(Math.random()*100)].id,
           created_at: createdAt,
