@@ -5,8 +5,6 @@ const {
   authenticateUser,
   checkRole,
 } = require('../../middlewares/authentication.middleware');
-const dataValidator = require('../../middlewares/dataValidator');
-const createUpdateUserSchema = require('../../schemas/createUpdateUser');
 
 router.get(
   '/all',
@@ -52,7 +50,6 @@ router.get('/', authenticateUser, async (req, res, next) => {
 
 router.post(
   '/',
-  dataValidator(createUpdateUserSchema),
   async (req, res, next) => {
     let schema = req.body; // if the body will be validate by a middleware we already expect an object with valid info.
     // user as a account
