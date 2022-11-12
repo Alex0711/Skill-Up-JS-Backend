@@ -46,14 +46,15 @@ export const getUserById = (id) => {
 };
 
 export const createUser = (value) => {
-
+    
     return async (dispatch) => {
         dispatch(getUsersStart);
         try {
             const res = await axios.post('http://localhost:3001/user', value)
             dispatch(addUsers(res.data));
-            dispatch(getUsers());
+            // dispatch(getUsers());
         } catch (err) {
+            console.log(err)
             dispatch(getUsersFailed(err));
         };
     };
