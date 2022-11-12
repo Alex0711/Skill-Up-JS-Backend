@@ -47,9 +47,15 @@ const usersSlice = createSlice({
         ...state,
       };
     },
+    cleanUser: (state) => {
+      return {
+        ...state,
+        usersList: []
+      }
+    },
   }
 })
 
-export const { getUsersFailed, getUsersStart, getUsersSuccess, getById, addUsers, deleteUsers } = usersSlice.actions;
+export const { getUsersFailed, getUsersStart, getUsersSuccess, getById, addUsers, deleteUsers, cleanUser } = usersSlice.actions;
 
 export default usersSlice.reducer;
