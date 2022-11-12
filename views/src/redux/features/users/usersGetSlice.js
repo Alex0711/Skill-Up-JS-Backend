@@ -18,6 +18,20 @@ export const getUsers = () => {
 
 };
 
+export const getAllUsers = () => {
+    return async (dispatch) => {
+        dispatch(getUsersStart);
+        try {
+            const res = await instance.get('/user/all')
+            dispatch(getUsersSuccess(res.data));
+
+        } catch (err) {
+            dispatch(getUsersFailed(err));
+        };
+    };
+
+};
+
 export const getUserById = (id) => {
     return async (dispatch) => {
         dispatch(getUsersStart);
