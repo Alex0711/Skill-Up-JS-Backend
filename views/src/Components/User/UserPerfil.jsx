@@ -39,7 +39,8 @@ const UserPerfil = () => {
   }, []);
 
   return (
-    <section className="flex flex-col w-full lg:w-fit p-6 lg:px-16 lg:py-24 border rounded-lg bg-white">
+    <section className="flex flex-col w-full lg:w-fit p-6 lg:px-16 lg:py-16 border rounded-lg bg-white mx-auto">
+      <h3 className="text-center text-2xl font-bold pb-8">Edit profile</h3>
       {user && (
         <Formik
           enableReinitialize={true}
@@ -63,7 +64,7 @@ const UserPerfil = () => {
           {(props) => (
             <Form className="flex flex-col justify-evenly gap-16">
               <div className="w-full flex flex-col lg:flex-row gap-6">
-                <div className="h-full bg-gray-100 flex flex-row">
+                <div className="h-full  flex flex-row">
                   <img
                     className="w-48 h-48 bg-white border p-2 rounded-lg object-contain min-h-0"
                     src={user?.image}

@@ -10,7 +10,8 @@ const ExpensePage = () => {
     exit={{ opacity: 0}}
     >
       <HeaderContainer />
-      <main className="flex flex-col px-6 lg:px-16 py-8 gap-6">
+      <main className="flex flex-col px-6 lg:px-16 py-8 gap-6 bg-gray-50 min-h-[70vh]">
+      <h1 className="text-4xl font-bold">Make a payment</h1>
        <FormPayment />
       </main>
       <FooterContainer />
