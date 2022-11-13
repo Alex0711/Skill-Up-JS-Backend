@@ -10,17 +10,23 @@ import {
   Label,
 } from "recharts";
 
-const ChartWidget = ({ title, aspect, data, dataKeyX, dataKeyY, color }) => {
+const ChartWidget = ({ title, info, chartTitle, aspect, data, dataKeyX, dataKeyY, color }) => {
   return (
-    <div className="py-10 pb-20  border-b-2 flex flex-col space-y-16 xl:space-y-0 xl:flex-row justify-around xl:pt-10 xl:px-10 xl:pb-15">
-      <div className="flex h-full items-center border px-6 lg:px-10 py-16 gap-12 rounded-lg bg-gradient-to-b from-teal-50 to-white">
+    <div className="py-10 pb-20  border-b-2 flex flex-col space-y-16 xl:space-y-0 xl:flex-col justify-around xl:pt-10 xl:px-10 xl:pb-15">
+      <div className="flex flex-col lg:flex-col justify-between gap-2">
+        <div className="flex flex-col lg:flex-col justify-center lg:items-center">
+          <p className="text-2xl font-bold opacity-80">{title}</p>
+          <p className="text-lg opacity-80 pb-3">
+            {info}
+          </p>
+        </div>
+      </div>
+      <div className="flex h-full justify-center items-center border px-6 lg:px-10 py-16 gap-12 rounded-lg bg-gradient-to-b from-teal-50 to-white">
         <div className="flex flex-col 2xl:w-2/4 gap-6 z-10">
           <div className="flex flex-col gap-2">
-            <p className="text-xl font-semibold gap-4 opacity-80">{title}</p>
+            <p className="text-xl font-semibold gap-4 opacity-80">{chartTitle}</p>
           </div>
-          <div style={{ display: "flex", width: "800px", height: "300px" }}>
-            {/* <div className="title">{title}</div> */}
-            <ResponsiveContainer width="100%" height={250}>
+            <ResponsiveContainer width={800} height={250}>
               <AreaChart
                 width={730}
                 height={250}
@@ -59,7 +65,6 @@ const ChartWidget = ({ title, aspect, data, dataKeyX, dataKeyY, color }) => {
                 />
               </AreaChart>
             </ResponsiveContainer>
-          </div>
         </div>
       </div>
     </div>
