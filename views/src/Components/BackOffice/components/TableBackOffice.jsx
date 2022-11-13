@@ -63,8 +63,12 @@ const TableBackOffice = ({ data }) => {
                 {user.roleId}
               </td>
               <td className="px-3 py-4 text-sm whitespace-nowrap">
-                <div>Block</div>
-                <div>Delete</div>
+                <button className="ml-auto px-4 py-2 text-white bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2">
+                  Block
+                </button>
+                <button className="ml-auto px-4 py-2 text-white bg-gradient-to-r from-red-400 via-red-500 to-red-600 hover:bg-gradient-to-br focus:ring-2 focus:outline-none focus:ring-teal-300 dark:focus:ring-teal-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2">
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
