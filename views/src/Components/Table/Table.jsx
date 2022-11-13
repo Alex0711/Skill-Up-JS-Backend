@@ -44,7 +44,7 @@ const Table = ({ user }) => {
                     </td>
                     <td
                       className={`px-3 py-4 text-sm font-bold whitespace-nowrap ${
-                        category === "Expense"
+                        category === "Expense" || category === "User-transfer"
                           ? "text-red-500"
                           : "text-teal-500"
                       }`}
