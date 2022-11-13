@@ -35,8 +35,9 @@ export const createTransactions = (value) => {
     return async() => {
         // dispatch(getTransactionsStart());
         try {
-            await instance().post('/transaction', value);
-            dispatch(getTransactions());
+            const rta = await instance().post('/transaction', value);
+            // dispatch(getTransactions());
+            return rta
         } catch (err) {
             if (err.name === 'AxiosError') {
               return err.response
